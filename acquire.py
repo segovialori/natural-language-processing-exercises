@@ -127,4 +127,4 @@ def get_all_news_articles(categories):
 
 def acquire_news_articles():
 	categories = ["business", "sports", "technology", "entertainment", "science", "world"]
-	return get_all_news_articles(categories): 
+	return get_all_news_articles(categories)
