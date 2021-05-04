@@ -108,6 +108,7 @@ def get_articles(category):
     # Return the list of dictionaries
     return output
     
+categories = ["business", "sports", "technology", "entertainment", "science", "world"]
 
 def get_all_news_articles(categories):
     """
