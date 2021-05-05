@@ -56,8 +56,6 @@ def stem(string):
 
 #function to lemmatize
 def lemmatize(string):
-    # Download the first time.
-    nltk.download('wordnet')
     # Create the Lemmatizer.
     wnl = nltk.stem.WordNetLemmatizer()
     # Use the lemmatizer on each word in the list of words we created by using split.
