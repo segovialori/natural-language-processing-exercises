@@ -28,7 +28,6 @@ def get_codeup_blog(url):
     output = {}
     output["title"] = title
     output["published_date"] = published_date
-    output["blog_image"] = blog_image
     output["content"] = content
     
     return output
