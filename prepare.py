@@ -24,7 +24,8 @@ def clean(text):
              .decode('utf-8', 'ignore')
              .lower())
     words = re.sub(r'[^\w\s]', '', text).split()
-    return [wnl.lemmatize(word) for word in words if word not in stopwords]
+    # Return a joined string
+    return " ".join([wnl.lemmatize(word) for word in words if word not in stopwords])
 #function to clean
 def basic_clean(string):
     """
