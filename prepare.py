@@ -13,6 +13,18 @@ import acquire as a
 #Prepare NLP Text
 
 #function to clean
+ADDITIONAL_STOPWORDS = ['r', 'u', '2', 'ltgt'] #ltgt is html artifact
+
+def clean(text):
+    'A simple function to cleanup text data'
+    wnl = nltk.stem.WordNetLemmatizer()
+    stopwords = nltk.corpus.stopwords.words('english') + ADDITIONAL_STOPWORDS
+    text = (unicodedata.normalize('NFKD', text)
+             .encode('ascii', 'ignore')
+             .decode('utf-8', 'ignore')
+             .lower())
+    words = re.sub(r'[^\w\s]', '', text).split()
+    return [wnl.lemmatize(word) for word in words if word not in stopwords]
 #function to clean
 def basic_clean(string):
     """
@@ -60,6 +72,8 @@ def lemmatize(string):
     wnl = nltk.stem.WordNetLemmatizer()
     # Use the lemmatizer on each word in the list of words we created by using split.
     lemmas = [wnl.lemmatize(word) for word in string.split()]
+    # Join our list of words into a string again; assign to a variable to save changes.
+    lemmatized_string = ' '.join(lemmas)
     
     return lemmas
 
